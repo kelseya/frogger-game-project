@@ -31,6 +31,8 @@ class Player extends Entity {
   constructor() {
     super();
     this.sprite += 'char-boy.png';
+    this.moving = false;
+    this.won = false;
   }
   handleInput(input) {
     switch(input) {
@@ -48,7 +50,19 @@ class Player extends Entity {
         break;
       default:
         break;
-    }
+    };
+    this.moving = true;
+  }
+  update(dt) {
+    super.update(dt);
+      if(this.isOutOfBoundsY && !this.moving && !this.won) {
+        alert('Congratulations, You Won');
+        this.won = true;
+      }
+  }
+  render() {
+    super.render();
+    this.moving = false;
   }
 }
 
