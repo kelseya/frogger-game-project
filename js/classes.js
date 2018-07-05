@@ -34,6 +34,7 @@ class Player extends Entity {
     this.moving = false;
     this.won = false;
   }
+
   handleInput(input) {
     switch(input) {
       case 'left':
@@ -60,11 +61,11 @@ class Player extends Entity {
         const modal = document.querySelector(".modal-content");
         modal.style.display="block";
         this.won = true;
-        let replayGameModalButton = document.querySelector('#replayGameModal');
+        const replayGameModalButton = document.querySelector('#replayGameModal');
         replayGameModalButton.onclick = function(){
           location.reload(true)
         }
-        let closeModalButton = document.querySelector('#closeModal');
+        const closeModalButton = document.querySelector('#closeModal');
         closeModalButton.onclick = function(){
            modal.style.display = "none";
         }
