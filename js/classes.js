@@ -34,7 +34,7 @@ class Player extends Entity {
     this.moving = false;
     this.won = false;
   }
-
+//this handles user keystrokes
   handleInput(input) {
     switch(input) {
       case 'left':
@@ -90,11 +90,11 @@ class Enemy extends Entity {
     super.update();
     // this sets the off-screen starting position of each enemy on the x axis
     if(this.isOutOfBoundsX) {
-        this.x = (-10*Math.random());
+        this.x = (-1*Math.random());
     }
     // this sets the pace the enemy moves across the x axis
     else {
-      this.x += (Math.random() * dt);
+      this.x += (Math.random() * dt * 3);
     }
   }
 }
