@@ -53,11 +53,21 @@ class Player extends Entity {
     };
     this.moving = true;
   }
+  //this makes the won modal appear when the user reaches the water
   update(dt) {
     super.update(dt);
       if(this.isOutOfBoundsY && !this.moving && !this.won) {
-        alert('Congratulations, You Won');
+        const modal = document.querySelector(".modal-content");
+        modal.style.display="block";
         this.won = true;
+        let replayGameModalButton = document.querySelector('#replayGameModal');
+        replayGameModalButton.onclick = function(){
+          location.reload(true)
+        }
+        let closeModalButton = document.querySelector('#closeModal');
+        closeModalButton.onclick = function(){
+           modal.style.display = "none";
+        }
       }
   }
   render() {
