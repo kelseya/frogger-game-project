@@ -98,3 +98,5 @@ class Enemy extends Entity {
     }
   }
 }
+//parts of the Entity, Player, & Enemy classes use material from the @Roderick webinar
+//https://zoom.us/recording/play/aulotDlzKFegQFIJTaTzKgWvNkVsYtlwO454vL1UPE1Cm6lOUBQCtfVurPOIAGAS?startTime=1529542978000
